@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/Dulkith/.platformio/penv/bin:/Users/Dulkith/.platformio/penv:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/Dulkith/Desktop/iit/mongodb/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Dulkith/Library/Android/sdk/emulator:/Users/Dulkith/Library/Android/sdk/tools:/Users/Dulkith/Library/Android/sdk/tools/bin:/Users/Dulkith/Library/Android/sdk/platform-tools",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
