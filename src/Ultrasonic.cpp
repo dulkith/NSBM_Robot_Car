@@ -17,7 +17,7 @@ void ObjectDetector::SETUP() {
     pinMode(echoPin, INPUT); // Sets the echoPin as an Input
  }
 
-int Buzzer::beep() {
+int Buzzer::distance() {
     // Clears the trigPin
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
