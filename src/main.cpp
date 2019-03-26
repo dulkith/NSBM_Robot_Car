@@ -5,12 +5,8 @@ by Dulkith Bataduwa
 
 #include <Arduino.h>
 
-#include <BeeLineSensorPro.h>
+#include "IRSensorArray.h"
 #include "Drive.h"
-
-BeeLineSensorPro sensor = BeeLineSensorPro((unsigned char[]) {
-  A0, A1, A2, A3, A4, A5, A6, A7
-}, LINE_BLACK);
 
 float kP = 0.2;
 float kD = 0.8;
@@ -21,20 +17,20 @@ void setup() {
   drive.SETUP();
 
   for (int i = 0; i < 50; i++) {
-    sensor.calibrate();
+    iRSensorArray.getSensor().calibrate();
     drive.mdrive(-120, 120);
   }
   drive.mdrive(0, 0);
   delay(100);
 
   for (int i = 0; i < 100; i++) {
-    sensor.calibrate();
+    iRSensorArray.getSensor().calibrate();
     drive.mdrive(120, -120);
   }
   drive.mdrive(0, 0);
   delay(100);
   for (int i = 0; i < 40; i++) {
-    sensor.calibrate();
+    iRSensorArray.getSensor().calibrate();
     drive.mdrive(-120, 120);
   }
   drive.mdrive(0, 0);
@@ -43,7 +39,7 @@ void setup() {
 }
 
 void loop() {
-  int err = sensor.readSensor();
+  int err = iRSensorArray.getSensor().readSensor();
   Serial.println(err);
   int m1 =120;
   int m2 = 120;
