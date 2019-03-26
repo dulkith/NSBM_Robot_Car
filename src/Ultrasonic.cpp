@@ -1,36 +1,38 @@
 
 #include <Arduino.h>
 
-#include "ObjectDetector.h"
+#include "Ultrasonic.h"
 
-// defines pins numbers
-const int trigPin = 9;
-const int echoPin = 10;
-// defines variables
-long duration;
-int distance;
+// #define TRIG 3
+// #define ECHO 1
+#define TRIG 14
+#define ECHO 12
 
-ObjectDetector::ObjectDetector() {}
+double startDistance;
 
-void ObjectDetector::SETUP() { 
-    pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
-    pinMode(echoPin, INPUT); // Sets the echoPin as an Input
- }
+Ultrasonic::Ultrasonic() {}
 
-int Buzzer::distance() {
-    // Clears the trigPin
-    digitalWrite(trigPin, LOW);
-    delayMicroseconds(2);
-    // Sets the trigPin on HIGH state for 10 micro seconds
-    digitalWrite(trigPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(trigPin, LOW);
-    // Reads the echoPin, returns the sound wave travel time in microseconds
-    duration = pulseIn(echoPin, HIGH);
-    // Calculating the distance
-    distance = duration*0.034/2;
-    // Return the distance
-    return distance;
+void Ultrasonic::SETUP() {
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+  startDistance = getDistance();
 }
 
-ObjectDetector objectDetector = ObjectDetector();
+double Ultrasonic::getDistance() {
+  // defines variables
+  long duration;
+  int distance;
+  // Clears the trigPin
+  digitalWrite(TRIG, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(ECHO, HIGH);
+  // Calculating the distance
+  distance = duration * 0.034 / 2;
+  // Prints the distance on the Serial Monitor
+  return distance;
+}

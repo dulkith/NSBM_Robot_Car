@@ -1,14 +1,15 @@
 
-#ifndef OBJECTDETECTOR_H
-#define OBJECTDETECTOR_H
+#ifndef ULTRASONIC_H
+#define ULTRASONIC_H
 
-class ObjectDetector {
+class Ultrasonic {
 public:
-  ObjectDetector();
+  Ultrasonic();
   void SETUP();
-  int distance();
+  double getDistance();
+  double getStartDistance();
 };
 
-extern ObjectDetector objectDetector;
+extern Ultrasonic ultrasonic;
 
 #endif
