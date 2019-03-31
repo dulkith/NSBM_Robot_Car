@@ -13,7 +13,7 @@ float kD = 0.8;
 int last_value;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);   // Initiate a serial communication
   drive.SETUP();
 
   for (int i = 0; i < 50; i++) {

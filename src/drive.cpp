@@ -3,31 +3,24 @@
 
 #include "Drive.h"
 
-#define L_MOTOR_PWM 4 //L PWM Pin
+#define L_MOTOR_PWM 10 //L PWM Pin
 #define R_MOTOR_PWM 5 // R PWM Pin
 
-#define L_MOTOR1 43
-#define L_MOTOR2 45
+#define L_MOTOR1 9
+#define L_MOTOR2 8
 
-#define R_MOTOR1 49
-#define R_MOTOR2 47
-
-#define M_OTOREN 17
-#define M_OTOREN2 16
-
-
-#define M1 4
-#define M1pwm 5
-#define M2 7
-#define M2pwm 6
+#define R_MOTOR3 7
+#define R_MOTOR4 6
 
 Drive::Drive() {}
 
 void Drive::SETUP() {
-  pinMode(M1, OUTPUT);
-  pinMode(M1pwm, OUTPUT);
-  pinMode(M2, OUTPUT);
-  pinMode(M2pwm, OUTPUT);
+  pinMode(L_MOTOR_PWM, OUTPUT);
+  pinMode(R_MOTOR_PWM, OUTPUT);
+  pinMode(L_MOTOR1, OUTPUT);
+  pinMode(L_MOTOR2, OUTPUT);
+  pinMode(R_MOTOR3, OUTPUT);
+  pinMode(R_MOTOR4, OUTPUT);
  }
 
 void Drive::mdrive(int m1, int m2) {
