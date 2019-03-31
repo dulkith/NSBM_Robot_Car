@@ -3,6 +3,19 @@
 
 #include "Drive.h"
 
+#define L_MOTOR_PWM 4 //L PWM Pin
+#define R_MOTOR_PWM 5 // R PWM Pin
+
+#define L_MOTOR1 43
+#define L_MOTOR2 45
+
+#define R_MOTOR1 49
+#define R_MOTOR2 47
+
+#define M_OTOREN 17
+#define M_OTOREN2 16
+
+
 #define M1 4
 #define M1pwm 5
 #define M2 7
